@@ -9,6 +9,13 @@
 .error {
   color: red;
 }
+.title {
+  text-align: center;
+  line-height: 1;
+  font-size: 22px;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+}
 dl {
   background: #fff;
   border: 1px solid #e0e0e0;

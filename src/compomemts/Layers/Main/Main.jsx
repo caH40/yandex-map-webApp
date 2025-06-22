@@ -33,8 +33,15 @@ export default function Main() {
     };
   }, [handleClick, tg]);
 
+  if (entity !== 'start' && entity !== 'weather') {
+    <h1 className={styles.error}>Не получено название выбираемой сущности!</h1>;
+  }
+
   return (
     <div className={styles.wrapper}>
+      <h1 className={styles.title}>
+        Выбор {entity === 'start' ? 'места старта' : 'места контроля погоды'}
+      </h1>
       <Map defaultState={init} width={380} height={430} onClick={handleClickOnMap}>
         <Placemark geometry={placemark} />
       </Map>
