@@ -9,6 +9,11 @@
 .error {
   color: red;
 }
+.map {
+  width: 100%;
+  height: 70vh;
+  min-height: 400px;
+}
 .title {
   text-align: center;
   line-height: 1;

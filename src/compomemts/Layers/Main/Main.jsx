@@ -42,7 +42,13 @@ export default function Main() {
       <h1 className={styles.title}>
         Выбор {entity === 'start' ? 'места старта' : 'места контроля погоды'}
       </h1>
-      <Map defaultState={init} width={380} height={430} onClick={handleClickOnMap}>
+      <Map
+        defaultState={init}
+        width={380}
+        height={430}
+        onClick={handleClickOnMap}
+        className={styles.map}
+      >
         <Placemark geometry={placemark} />
       </Map>
       <div className={styles.description}>
