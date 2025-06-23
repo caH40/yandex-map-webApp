@@ -1,5 +1,13 @@
 import { useEffect } from 'react';
-import { Map, Placemark, useYMaps } from '@pbe/react-yandex-maps';
+import {
+  GeolocationControl,
+  Map,
+  Placemark,
+  SearchControl,
+  TypeSelector,
+  useYMaps,
+  ZoomControl,
+} from '@pbe/react-yandex-maps';
 
 import { INIT_CENTER_MAP, INIT_ZOOM_MAP } from '../../../constants/navigation';
 import { useFetchData } from '../../../hooks/useFetchData';
@@ -50,6 +58,10 @@ export default function Main() {
         className={styles.map}
       >
         <Placemark geometry={placemark} />
+        <SearchControl options={{ float: 'right' }} />
+        <GeolocationControl options={{ float: 'left' }} />
+        <ZoomControl options={{ float: 'right' }} />
+        <TypeSelector options={{ float: 'right' }} />
       </Map>
       <div className={styles.description}>
         {address?.name && (
@@ -63,7 +75,6 @@ export default function Main() {
 
         {error && (
           <dl>
-            <dt>Адрес:</dt>
             <dd>
               <span className={styles.error}>{error}</span>
             </dd>
